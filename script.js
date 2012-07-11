@@ -11,8 +11,14 @@ World = function() {
 	
 	world.nodes = [];
 	world.add = function(node){};
-	
 	world.active_node = null;
+	
+	world.left_element = null;
+	world.turn_left = function(){};
+	world.left_element.hover(world.turn_left, function(){});
+	world.right_element = null;
+	world.turn_right = function(){};
+	world.right_element.hover(world.turn_right, function(){});
 	
 	world.flags = {};
 	
@@ -32,6 +38,9 @@ Node = function() {
 	
 	node.enter = function(){};
 	node.exit = function(){};
+	
+	node.turn_left = function(){};
+	node.turn_right = function(){};
 	
 	return node;
 	

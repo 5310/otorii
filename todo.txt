@@ -1,1 +1,3 @@
+# X	Set-up project files and repo.
+# X	Add outlines for "classes".
 
