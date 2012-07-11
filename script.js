@@ -7,7 +7,7 @@ window.onload = function() {
 
 World = function() {
 	
-	var world = new Object();
+	var world = {};
 	
 	world.nodes = [];
 	world.add = function(node){};
@@ -29,7 +29,7 @@ World = function() {
 
 Node = function() {
 	
-	var node = new Object();
+	var node = {};
 	
 	node.angle = 0;
 	
@@ -50,7 +50,7 @@ Node = function() {
 
 Branch = function(parent_node) {
 	
-	var branch = new Object();
+	var branch = {};
 	
 	branch.parent_node = parent_node; 
 	
