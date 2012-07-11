@@ -39,6 +39,7 @@ Node = function() {
 	node.enter = function(){};
 	node.exit = function(){};
 	
+	node.turn = function(){};
 	node.turn_left = function(){};
 	node.turn_right = function(){};
 	
