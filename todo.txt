@@ -1,3 +1,16 @@
-# X	Set-up project files and repo.
-# X	Add outlines for "classes".
+#	Init:	
+	# X	Set-up project files and repo.
+	# X	Add outlines for "classes".
+
+@	World:
+	#	Write add().
+	#	Make active_node manifest.
+	
+@	Node:
+	#	Write add().
+	#	Write enter() and exit to show and hide Branches for now.
+	#	Write turn().
+
+@	Branch:
+	#	Begin by writing a visible Branch.
 
