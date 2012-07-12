@@ -1,15 +1,20 @@
-#	Init:	
+@	Misc:	
 	# X	Set-up project files and repo.
 	# X	Add outlines for "classes".
+	#	Center paper on page.
+	#	Make it black.
 	
 @	Branch:
 	# X	Begin by writing a visible Branch.
+	#	Zoom in and out on hover and shudder when clicked maybe?
+	#	Also expose hooks for onClick, onFocus, onHover, onDefocus, etc.
 	
 @	Node:
 	# X	Write add().
 	# X	Write enter() and exit() to show and hide Branches for now.
 	# X	Write turn().
 	#	Write remove().
+	#	Expose hooks, onEnter, onExit, etc.
 
 @	World:
 	# X	Write add().
