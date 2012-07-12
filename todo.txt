@@ -1,16 +1,22 @@
 #	Init:	
 	# X	Set-up project files and repo.
 	# X	Add outlines for "classes".
-
-@	World:
-	#	Write add().
-	#	Make active_node manifest.
+	
+@	Branch:
+	# X	Begin by writing a visible Branch.
 	
 @	Node:
-	#	Write add().
-	#	Write enter() and exit to show and hide Branches for now.
-	#	Write turn().
+	# X	Write add().
+	# X	Write enter() and exit() to show and hide Branches for now.
+	# X	Write turn().
+	#	Write remove().
 
-@	Branch:
-	#	Begin by writing a visible Branch.
-
+@	World:
+	# X	Write add().
+	# X	Make active_node manifest.
+	# X	Write turning functions.
+	# X	Smoother turns.
+	#	Write remove().
+	
+@	Interface:
+	# X	Make an Interface singleton that drives a world.
