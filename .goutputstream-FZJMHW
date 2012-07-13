@@ -234,33 +234,28 @@ Branch = function(image_path, angle, height) {
 	// Branches can be interacted with. 
 	// These are the default behavior, which can be expanded with hooks.
 	
-	// Clicking is the simplest interaction.
-	// The onClick hook is extensible. Clicking doesn't really do anything else.
-	branch.onClick = function(){console.log("click");};
+	branch.onClick = function(){};
 	branch.click = function(){
 		// Execute hook.
 		this.parent.onClick();
 	};
 	branch.element.click(branch.click);
 	
-	// Hovering will subtly zoom the branch in and out.
-	// There are also extensible hooks for onFocus, onDefocus,
-	// and a repeating hook for while the onHover.
 	branch.onFocus = function(){};
 	branch.onDefocus = function(){};
 	branch.onHover = function(){};
 	branch.isHover = false;
 	// Assign the onHover hook to repeat if hovering.
-	setInterval(function(){ if ( branch.isHover ) branch.onHover(); }, 1000/60);
+	setTimeout(function(){ if ( branch.isHover ) branch.onHover(); }, 1000/60);
 	branch.hover = function(){
 		// Set flag.
-		this.parent.isHover = true;
+		this.isHover = true;
 		// Execute hook.
 		this.parent.onFocus();
 	};
 	branch.unhover = function(){
 		// Set flag.
-		this.parent.isHover = false;
+		this.isHover = false;
 		// Execute hook.
 		this.parent.onDefocus();
 	};
