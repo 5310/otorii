@@ -59,6 +59,9 @@ Interface = function(world) {
 	};
 	setInterval(interface.tick, 1000/60);
 	
+	//interface.background = paper.rect(0, 0, paper.width, paper.height).attr('fill', "#10161B").attr('stroke-width', 0);
+	//interface.background.toBack();
+	
 	return interface;
 }
 
