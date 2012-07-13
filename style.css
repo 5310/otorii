@@ -20,6 +20,6 @@ body {
 	margin-left: -50%;
 	margin-top: -30.4%; /* Don't ask me why it's 30.4 and not 50.*/
 	background: #10161B;
-	background:url('noise.gif') repeat;
+	background:url('images/noise.gif') repeat;
 	border: solid 10px rgba(11, 14, 17, 0.75);
 };

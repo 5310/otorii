@@ -13,11 +13,11 @@ window.onload = function() {
 	};
 	w.add(n);
 	
-	n.add(Branch("test.png", 121, 0.75));
-	n.add(Branch("test.png", 0, 0.75));
-	n.add(Branch("test.png", 60, 0.75));
-	n.add(Branch("test.png", 180, 0.75));
-	n.add(Branch("test.png", 350, 0.75));
+	n.add(Branch("images/test.png", 121, 0.75));
+	n.add(Branch("images/test.png", 0, 0.75));
+	n.add(Branch("images/test.png", 60, 0.75));
+	n.add(Branch("images/test.png", 180, 0.75));
+	n.add(Branch("images/test.png", 350, 0.75));
 	
 	w.setActiveNode(n);
 	i = Interface(w);
