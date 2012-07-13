@@ -143,13 +143,16 @@ Node = function() {
 	};
 	node.remove = function(branch){
 		// If argument an interfer, remove element of that index.
-		if ( isInteger(branch) )
+		if ( isInteger(branch) ) {
+			this.branches[branch].element.hide();
 			this.branches.remove(branch);
-		// Else, remove that Branch from the list.
-		else
+		// Else, remove that Branch from the list, as well as the Branch.
+		} else {
+			branch.element.hide();
 			for ( var i = 0; i < this.branches.length; i++ )
 				if ( this.branches[i] === branch )
 					this.branches.remove(i);
+		}
 	};
 	
 	// Once a Nodes can be active or inactive with events either way.
