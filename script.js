@@ -146,8 +146,8 @@ Node = function() {
 		if ( inInteger(branch) )
 			this.branches.remove(branch);
 		// Else, remove that Branch from the list.
-		else
-			if ( var i = 0; i < this.branches.length; i++ )
+		else {
+			for ( var i = 0; i < this.branches.length; i++ )
 				if ( this.branches[i] === branch )
 					this.branches.remove(i);
 	};
