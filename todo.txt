@@ -13,7 +13,7 @@
 	# X	Write add().
 	# X	Write enter() and exit() to show and hide Branches for now.
 	# X	Write turn().
-	#	Write remove().
+	# X	Write remove().
 	#	Expose hooks, onEnter, onExit, etc.
 
 @	World:
@@ -21,7 +21,6 @@
 	# X	Make active_node manifest.
 	# X	Write turning functions.
 	# X	Smoother turns.
-	#	Write remove().
 	
 @	Interface:
 	# X	Make an Interface singleton that drives a world.
