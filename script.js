@@ -141,6 +141,11 @@ Node = function() {
 		// Then add it.
 		this.branches.push(branch);
 	};
+	node.remove = function(branch){
+		if ( var i = 0; i < this.branches.length; i++ )
+			if ( this.branches[i] === branch )
+				this.branches.remove(i);
+	};
 	
 	// Once a Nodes can be active or inactive with events either way.
 	
