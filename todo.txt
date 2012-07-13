@@ -3,7 +3,8 @@
 	# X	Add outlines for "classes".
 	# X	Center paper on page.
 	# X	Make it dark.
-	#	Add animated noise.
+	# X	Add animated noise.
+	# 	Consider preloading images.
 	
 @ X	Branch:
 	# X	Begin by writing a visible Branch.
