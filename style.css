@@ -1,5 +1,5 @@
 body {
-	background: #182129;
+	background: #0B0E11;
 }
 
 #container {
@@ -19,5 +19,6 @@ body {
 #paper svg {
 	margin-left: -50%;
 	margin-top: -30.4%; /* Don't ask me why it's 30.4 and not 50.*/
-	border: solid 10px rgba(0, 0, 0, 0.25);
+	background: #10161B;
+	border: solid 10px rgba(16, 22, 27, 0.5);
 };
