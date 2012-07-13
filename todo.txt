@@ -5,6 +5,7 @@
 	# X	Make it dark.
 	# X	Add animated noise.
 	# 	Consider preloading images.
+	#	Maybe add a fullscreen option?
 	
 @ X	Branch:
 	# X	Begin by writing a visible Branch.
