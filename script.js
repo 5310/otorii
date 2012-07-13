@@ -248,6 +248,10 @@ normalizeAngle = function(angle, limit) {
 	return angle;
 };
 
+isInteger = function(value) {
+    return /^[\d]+$/.test(value);
+}
+
 
 Array.prototype.remove = function(from, to) {
 	// John Resig's Array element removal function.
