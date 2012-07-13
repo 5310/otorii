@@ -247,3 +247,11 @@ normalizeAngle = function(angle, limit) {
 		
 	return angle;
 };
+
+
+Array.prototype.remove = function(from, to) {
+	// John Resig's Array element removal function.
+	var rest = this.slice((to || from) + 1 || this.length);
+	this.length = from < 0 ? this.length + from : from;
+	return this.push.apply(this, rest);
+};
