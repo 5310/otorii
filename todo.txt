@@ -1,26 +1,30 @@
-@	Misc:	
+@	Presentation:	
 	# X	Set-up project files and repo.
 	# X	Add outlines for "classes".
-	#	Center paper on page.
-	#	Make it black.
+	# X	Center paper on page.
+	# X	Make it dark.
+	#	Add animated noise.
 	
-@	Branch:
+@ X	Branch:
 	# X	Begin by writing a visible Branch.
 	# X	Zoom out and in on click.
 	# X	Also expose hooks for onClick, onFocus, onHover, onDefocus, etc.
 	
-@	Node:
+@ X	Node:
 	# X	Write add().
 	# X	Write enter() and exit() to show and hide Branches for now.
 	# X	Write turn().
 	# X	Write remove().
 	# X	Expose hooks, onEnter, onExit, etc.
 
-@	World:
+@ X	World:
 	# X	Write add().
 	# X	Make active_node manifest.
 	# X	Write turning functions.
 	# X	Smoother turns.
 	
-@	Interface:
+@ X	Interface:
 	# X	Make an Interface singleton that drives a world.
+
+#	Game:
+	#	Model world visually.
