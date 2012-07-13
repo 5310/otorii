@@ -143,7 +143,7 @@ Node = function() {
 	};
 	node.remove = function(branch){
 		// If argument an interfer, remove element of that index.
-		if ( inInteger(branch) )
+		if ( isInteger(branch) )
 			this.branches.remove(branch);
 		// Else, remove that Branch from the list.
 		else
