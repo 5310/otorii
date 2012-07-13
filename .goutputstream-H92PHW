@@ -9,7 +9,7 @@ window.onload = function() {
 	
 	n = Node();
 	n.onEnter = function() {
-		console.log("This will run when this node is entered.");
+		console.log("YO");
 	};
 	w.add(n);
 	

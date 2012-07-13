@@ -14,7 +14,7 @@
 	# X	Write enter() and exit() to show and hide Branches for now.
 	# X	Write turn().
 	# X	Write remove().
-	#	Expose hooks, onEnter, onExit, etc.
+	# X	Expose hooks, onEnter, onExit, etc.
 
 @	World:
 	# X	Write add().
