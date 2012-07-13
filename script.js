@@ -5,7 +5,7 @@ window.onload = function() {
 	// tests //
 	
 	w = World();
-	i = Interface(w);
+	
 	
 	n = Node();
 	n.onEnter = function() {
@@ -20,6 +20,7 @@ window.onload = function() {
 	n.add(Branch("test.png", 350, 0.75));
 	
 	w.setActiveNode(n);
+	i = Interface(w);
 
 };
 
@@ -234,16 +235,22 @@ Branch = function(image_path, angle, height) {
 	// Branches can be interacted with. 
 	// These are the default behavior, which can be expanded with hooks.
 	
-	// Clicking is the simplest interaction.
-	// The onClick hook is extensible. Clicking doesn't really do anything else.
-	branch.onClick = function(){console.log("click");};
-	branch.click = function(){
+	// Clicking is the simplest interaction. And the onClick hook is extensible.
+	// Clicking will also subtly push the Branch's element.
+	branch.onClick = function(){};
+	branch.mousedown = function(){
+		// Zoom out the Branch Raphael element.
+		this.scale(1/1.1, 1/1.1);
+	};
+	branch.mouseup= function(){
+		// Zoom in the Branch Raphael element.
+		this.scale(1.1, 1.1);
 		// Execute hook.
 		this.parent.onClick();
 	};
-	branch.element.click(branch.click);
+	branch.element.mousedown(branch.mousedown);
+	branch.element.mouseup(branch.mouseup);
 	
-	// Hovering will subtly zoom the branch in and out.
 	// There are also extensible hooks for onFocus, onDefocus,
 	// and a repeating hook for while the onHover.
 	branch.onFocus = function(){};
