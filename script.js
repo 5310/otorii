@@ -241,15 +241,21 @@ Branch = function(image_path, angle, height) {
 	// Clicking is the simplest interaction. And the onClick hook is extensible.
 	// Clicking will also subtly push the Branch's element.
 	branch.onClick = function(){};
+	branch.isHold = false;
 	branch.mousedown = function(){
 		// Zoom out the Branch Raphael element.
 		this.scale(1/1.1, 1/1.1);
+		// Set flag.
+		this.parent.isHold = true;
 	};
 	branch.mouseup= function(){
 		// Zoom in the Branch Raphael element.
-		this.scale(1.1, 1.1);
+		if ( this.parent.isHold )
+			this.scale(1.1, 1.1);
 		// Execute hook.
 		this.parent.onClick();
+		// Set flag.
+		this.parent.isHold = false;
 	};
 	branch.element.mousedown(branch.mousedown);
 	branch.element.mouseup(branch.mouseup);
@@ -262,19 +268,24 @@ Branch = function(image_path, angle, height) {
 	branch.isHover = false;
 	// Assign the onHover hook to repeat if hovering.
 	setInterval(function(){ if ( branch.isHover ) branch.onHover(); }, 1000/60);
-	branch.hover = function(){
-		// Set flag.
-		this.parent.isHover = true;
+	branch.mouseover = function(){
 		// Execute hook.
 		this.parent.onFocus();
-	};
-	branch.unhover = function(){
 		// Set flag.
-		this.parent.isHover = false;
+		this.parent.isHover = true;
+	};
+	branch.mouseout = function(){
 		// Execute hook.
 		this.parent.onDefocus();
+		// If clicked, resize element.
+		if ( this.parent.isHold )
+			this.scale(1.1, 1.1);
+		// Set flag.
+		this.parent.isHover = false;
+		this.parent.isHold = false;
 	};
-	branch.element.hover(branch.hover, branch.unhover);
+	branch.element.mouseover(branch.mouseover);
+	branch.element.mouseout(branch.mouseout);
 	
 	return branch;
 	
