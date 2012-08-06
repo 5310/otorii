@@ -27,6 +27,20 @@
 	
 @ X	Interface:
 	# X	Make an Interface singleton that drives a world.
+	
+@	Assets:
+	# X	Doodle assets.
+	# X	Draw assets.
+	#	Collect sfx:
+		#	drip
+		#	chant for gates
+		#	chant for daruma
+		#	chant for shrine
+		#	leaves rustle
+		#	waterfall
+		#	chant for shrine
+		#	rever'bing chant for well
+		#	chant for mu
 
 #	Game:
-	#	Model world visually.
+	# X	Model world visually.
