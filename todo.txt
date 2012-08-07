@@ -1,11 +1,9 @@
-@	Presentation:	
+@ X	Presentation:	
 	# X	Set-up project files and repo.
 	# X	Add outlines for "classes".
 	# X	Center paper on page.
 	# X	Make it dark.
 	# X	Add animated noise.
-	# 	Consider preloading images.
-	#	Maybe add a fullscreen option?
 	
 @ X	Branch:
 	# X	Begin by writing a visible Branch.
@@ -28,19 +26,23 @@
 @ X	Interface:
 	# X	Make an Interface singleton that drives a world.
 	
-@	Assets:
+@ X	Assets:
 	# X	Doodle assets.
 	# X	Draw assets.
-	#	Collect sfx:
-		#	drip
-		#	chant for gates
-		#	chant for daruma
-		#	chant for shrine
-		#	leaves rustle
-		#	waterfall
-		#	chant for shrine
-		#	rever'bing chant for well
-		#	chant for mu
+	# X	Collect sfx:
+		# X	shishi odoshi
+		# X	gongs
+		# X	ema for shrine
+		# X	leaves rustle
+		# X	cicada
+		# X	paper unfurl
+		# X	waterfall
+		# X	well drip
 
 #	Game:
 	# X	Model world visually.
+	#	Preload assets.
+	#	Create nodes:
+	#	Create branches:
+	#	Connect nodes.
+	#	Implement logic:
