@@ -1,0 +1,13 @@
+Attribution for sound samples used in the game:
+-----------------------------------------------
+
+- [water_drip_echo2.wav](http://www.freesound.org/people/roscoetoon/sounds/27151/) from [roscoetoon](http://www.freesound.org/people/roscoetoon/)
+- [deerchase.mp3](http://www.freesound.org/people/morgantj/sounds/58569/) from [morgantj](http://www.freesound.org/people/morgantj/)
+- [Wind in the trees.wav](http://www.freesound.org/people/laurent/sounds/16995/) from [laurent](http://www.freesound.org/people/laurent/)
+- [ema_gokokuji.wav](http://www.freesound.org/people/Heigh-hoo/sounds/87558/) from [Heigh-hoo](http://www.freesound.org/people/Heigh-hoo/)
+- [big_waterfall.wav](http://www.freesound.org/people/A.Deathy/sounds/44880/#) from [A.Deathy](http://www.freesound.org/people/A.Deathy/)
+- [Kinder-Downfall_no_wind_14May2006.wav](http://www.freesound.org/people/jakeharries/sounds/19038/) from [jakeharries](http://www.freesound.org/people/jakeharries/)
+- [sw_paper_crumple_1.aiff](http://www.freesound.org/people/jppi_Stu/sounds/18339/) from [jppi_Stu](http://www.freesound.org/people/jppi_Stu/)
+- [Yoyogi gong.wav](http://www.freesound.org/people/Marec/sounds/16072/) from [Marec](http://www.freesound.org/people/Marec/)
+- [AkasakaHieJinjaCicadas_4mics.wav](http://www.freesound.org/people/markystar/sounds/79086/) from [markystar](http://www.freesound.org/people/markystar/)
+
