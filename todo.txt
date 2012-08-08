@@ -38,6 +38,10 @@
 		# X	paper unfurl
 		# X	waterfall
 		# X	well drip
+		
+@	Playback:
+	#	Implement looping background music with controllable fade in and out.
+	#	Implement fire-and-forget sound effects.
 
 #	Game:
 	# X	Model world visually.
