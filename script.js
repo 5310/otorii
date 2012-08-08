@@ -1,26 +1,167 @@
 window.onload = function() {
 
-	// Initialize Raphael.js canvas.
-	paper = Raphael(document.getElementById('paper'), 900, 540);
+	// Initialize the system.
+	initialize: {
 
-	// tests //
-	tests: {
-		w = World();
+		// Create Raphael.js canvas.
+		paper = Raphael(document.getElementById('paper'), 900, 540);
 		
-		n = Node();
-		n.onEnter = function() {
-			console.log("This will run when this node is entered.");
-		};
-		w.add(n);
+		// Create the world.
+		world = World();
 		
-		n.add(Branch("images/test.png", 121, 0.75));
-		n.add(Branch("images/test.png", 0, 0.75));
-		n.add(Branch("images/test.png", 60, 0.75));
-		n.add(Branch("images/test.png", 180, 0.75));
-		n.add(Branch("images/test.png", 350, 0.75));
+		// Create the interface for out world.
+		interface = Interface(world);
+	
+	}
+	
+	// The starting branch.
+	start: {
 		
-		w.setActiveNode(n);
-		i = Interface(w);
+		// Create a node object and add it to the world.
+		var node = Node();
+		world.add(node);
+		
+		// Alias for node.
+		NODE_START = node;
+
+		// Event for entry.
+		node.onEnter = function() {};
+		
+		// Event for exit.
+		node.onExit = function() {};
+		
+		// The first torii.
+		torii1: {
+			
+			// Create a transient branch object and add it to the node.
+			var branch = Branch("images/torii1_front.png", 0, 0.5);
+			node.add(branch);
+			
+			// Event for clicking on this branch.
+			branch.onClick = function() {
+				NODE_MID.angle = 60;
+				world.setActiveNode(NODE_MID);
+			}
+			
+		}
+		
+		// The well.
+		well: {
+			
+			// Create a transient branch object and add it to the node.
+			var branch = Branch("images/well.png", 180, 0.5);
+			node.add(branch);
+			
+			// Event for clicking on this branch.
+			branch.onClick = function() {
+				//NODE.angle = 0;
+				//world.setActiveNode(NODE);
+			}
+			
+		}
+		
+		// Turn the node properly.
+		node.angle = 60;
+		
+		// This node is the first node.
+		world.setActiveNode(node);
+		
+	}
+	
+	// The middle game.
+	mid: {
+		
+		// Create a node object and add it to the world.
+		var node = Node();
+		world.add(node);
+		
+		// Alias for node.
+		NODE_MID = node;
+
+		// Event for entry.
+		node.onEnter = function() {};
+		
+		// Event for exit.
+		node.onExit = function() {};
+		
+		// The first torii.
+		torii1: {
+			
+			// Create a transient branch object and add it to the node.
+			var branch = Branch("images/torii1_front.png", 180, 0.5);
+			node.add(branch);
+			
+			// Event for clicking on this branch.
+			branch.onClick = function() {
+				NODE_START.angle = 240;
+				world.setActiveNode(NODE_START);
+			}
+			
+		}
+		
+		// The second torii.
+		torii2: {
+			
+			// Create a transient branch object and add it to the node.
+			var branch = Branch("images/torii2_front.png", 0, 0.5);
+			node.add(branch);
+			
+			// Event for clicking on this branch.
+			branch.onClick = function() {
+				NODE_END.angle = 60;
+				world.setActiveNode(NODE_END);
+			}
+			
+		}
+		
+	}
+	
+	// The end game.
+	end: {
+		
+		// Create a node object and add it to the world.
+		var node = Node();
+		world.add(node);
+		
+		// Alias for node.
+		NODE_END = node;
+
+		// Event for entry.
+		node.onEnter = function() {};
+		
+		// Event for exit.
+		node.onExit = function() {};
+		
+		// The first torii.
+		torii2: {
+			
+			// Create a transient branch object and add it to the node.
+			var branch = Branch("images/torii2_front.png", 180, 0.5);
+			node.add(branch);
+			
+			// Event for clicking on this branch.
+			branch.onClick = function() {
+				NODE_MID.angle = 240;
+				world.setActiveNode(NODE_MID);
+			}
+			
+		}
+		
+		// The second torii.
+		torii3: {
+			
+			// Create a transient branch object and add it to the node.
+			var branch = Branch("images/torii3.png", 0, 0.5);
+			node.add(branch);
+			
+			// Event for clicking on this branch.
+			branch.onClick = function() {
+				//NODE.angle = 0;
+				//world.setActiveNode(NODE);
+			}
+			
+		}
+		
 	}
 
 };
@@ -116,10 +257,12 @@ World = function() {
 	};
 	// And the World spins not entirely madly on.
 	world.turn = function() {
-		this.turn_speed *= 0.95;
-		if ( Math.abs(this.turn_speed) <= 0.001 )
-			this.turn_speed = 0;
-		this.active_node.turn(this.active_node.angle+this.turn_speed);
+		if ( this.active_node ) {
+			this.turn_speed *= 0.95;
+			if ( Math.abs(this.turn_speed) <= 0.001 )
+				this.turn_speed = 0;
+			this.active_node.turn(this.active_node.angle+this.turn_speed);
+		}
 	};
 	
 	// For ease, we'll store flags for the game here.
