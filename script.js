@@ -1,30 +1,31 @@
 window.onload = function() {
 
+	// Initialize Raphael.js canvas.
 	paper = Raphael(document.getElementById('paper'), 900, 540);
 
 	// tests //
-	
-	w = World();
-	
-	
-	n = Node();
-	n.onEnter = function() {
-		console.log("This will run when this node is entered.");
-	};
-	w.add(n);
-	
-	n.add(Branch("images/test.png", 121, 0.75));
-	n.add(Branch("images/test.png", 0, 0.75));
-	n.add(Branch("images/test.png", 60, 0.75));
-	n.add(Branch("images/test.png", 180, 0.75));
-	n.add(Branch("images/test.png", 350, 0.75));
-	
-	w.setActiveNode(n);
-	i = Interface(w);
+	tests: {
+		w = World();
+		
+		n = Node();
+		n.onEnter = function() {
+			console.log("This will run when this node is entered.");
+		};
+		w.add(n);
+		
+		n.add(Branch("images/test.png", 121, 0.75));
+		n.add(Branch("images/test.png", 0, 0.75));
+		n.add(Branch("images/test.png", 60, 0.75));
+		n.add(Branch("images/test.png", 180, 0.75));
+		n.add(Branch("images/test.png", 350, 0.75));
+		
+		w.setActiveNode(n);
+		i = Interface(w);
+	}
 
 };
 
-
+// Create a Interface entity. This should be a singleton.
 Interface = function(world) {
 
 	// An unenforced singleton that would let us control the game.
@@ -65,7 +66,7 @@ Interface = function(world) {
 	return interface;
 }
 
-
+// Create a World entity. This should be a singleton.
 World = function() {
 	
 	// The world is the entire game map.
@@ -128,6 +129,7 @@ World = function() {
 	
 }
 
+// Create a Node entity.
 Node = function() {
 	
 	// Nodes are places in the world.
@@ -209,6 +211,7 @@ Node = function() {
 	
 };
 
+// Create a Branch entity.
 Branch = function(image_path, angle, height) {
 	
 	// Branches are graphical entities that will fill each place in the world
@@ -292,6 +295,7 @@ Branch = function(image_path, angle, height) {
 };
 
 
+// Loads an image by specified path and coord.
 loadImage = function(path, x, y) {
 	
 	// Loats a plain vanilla HTML element first to get the size of an image automatically.
@@ -302,6 +306,7 @@ loadImage = function(path, x, y) {
 	
 };
 
+// Normalize an angle in degrees to be within 0 and 360.
 normalizeAngle = function(angle, limit) {
 	
 	// Normalize angle between 0 and 360 (exclusive, of course).
@@ -317,11 +322,13 @@ normalizeAngle = function(angle, limit) {
 	return angle;
 };
 
+// Checks if value is an integer.
 isInteger = function(value) {
     return /^[\d]+$/.test(value);
 }
 
 
+// Monkey-patching a nice clean remove function to arrays.
 Array.prototype.remove = function(from, to) {
 	// John Resig's Array element removal function.
 	var rest = this.slice((to || from) + 1 || this.length);
