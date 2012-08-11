@@ -291,7 +291,7 @@ Node = function() {
 	// Background sound for the node.
 	node.sound = undefined;
 	node.setSound = function(src) {
-		this.sound = new buzz.sound(src);
+		this.sound = new buzz.sound(src, {preload: true, loop:true});
 	};
 	
 	// Nodes will contain Branches. The same symbol may lead between two Nodes, but they're different.
@@ -324,7 +324,7 @@ Node = function() {
 	node.enter = function(){
 		// Begin playing the background sound, if any.
 		if ( this.sound !== undefined )
-			this.sound.loop().play().fadeIn();
+			this.sound.play().fadeIn();
 		// Turn branches properly.
 		this.turn();
 		// Show all the branches.
@@ -339,7 +339,7 @@ Node = function() {
 	node.exit = function(){
 		// Stop playing the background sound, if any.
 		if ( this.sound !== undefined )
-			this.sound.fadeOut().stop();
+			this.sound.fadeOut();
 		// Hide all the branches.
 		for ( var i = 0; i < this.branches.length; i++)
 			this.branches[i].element.hide();
