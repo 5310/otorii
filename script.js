@@ -23,6 +23,9 @@ window.onload = function() {
 		
 		// Alias for node.
 		NODE_START = node;
+		
+		// Assign background sound.
+		node.setSound("/sounds/cicadas.ogg");
 
 		// Event for entry.
 		node.onEnter = function() {};
@@ -221,8 +224,8 @@ World = function() {
 	};
 	world.active_node = undefined;
 	world.setActiveNode = function(node) {
-		for ( var i = 0; i < this.nodes.length; i++)
-			this.nodes[i].exit();
+		if ( this.active_node !== undefined )
+			this.active_node.exit();
 		this.active_node = node;
 		this.active_node.enter();
 	};
@@ -283,7 +286,13 @@ Node = function() {
 	node.angle = 0;
 	// They also have a FoV: The angle of stuff that will be visible at once.
 	// 120 degress will fill the width of the screen, 900px.
-	node.fov = 120;																
+	node.fov = 120;	
+	
+	// Background sound for the node.
+	node.sound = undefined;
+	node.setSound = function(src) {
+		this.sound = new buzz.sound(src);
+	};
 	
 	// Nodes will contain Branches. The same symbol may lead between two Nodes, but they're different.
 	node.branches = [];
@@ -313,6 +322,9 @@ Node = function() {
 	// This can be expanded with hooks for gameplay via onEnter.
 	node.onEnter = function(){};
 	node.enter = function(){
+		// Begin playing the background sound, if any.
+		if ( this.sound !== undefined )
+			this.sound.loop().play().fadeIn();
 		// Turn branches properly.
 		this.turn();
 		// Show all the branches.
@@ -325,6 +337,9 @@ Node = function() {
 	// And upon leaving, this happens. This too can be extended via onExit.
 	node.onExit = function(){};
 	node.exit = function(){
+		// Stop playing the background sound, if any.
+		if ( this.sound !== undefined )
+			this.sound.fadeOut().stop();
 		// Hide all the branches.
 		for ( var i = 0; i < this.branches.length; i++)
 			this.branches[i].element.hide();
