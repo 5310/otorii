@@ -22,4 +22,8 @@ body {
 	background: #10161B;
 	background:url('images/noise.gif') repeat;
 	border: solid 10px rgba(11, 14, 17, 0.75);
-};
+}
+
+#preload {
+	display: none;
+}

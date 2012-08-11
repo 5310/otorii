@@ -45,7 +45,7 @@
 
 #	Game:
 	# X	Model world visually.
-	#	Preload assets.
+	# X	Preload assets.
 	#	Create nodes:
 	#	Create branches:
 	#	Connect nodes.
